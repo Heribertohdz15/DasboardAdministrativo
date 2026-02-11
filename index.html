@@ -1,30 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Holaa 5C</title>
+    <title>Paginacion de Productos</title>
+
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
-    <header>
-            <h1>Hola primer práctica de 5C</h1>
-            <button class="btn-volver" onclick="window.location.href='../index.html'">Inicio</button>
+
+    <header class="top-bar">
+
+        <div class="search-box">
+            <input id="searchInput" type="text" placeholder="Buscar productos...">
+            <button id="searchBtn">Buscar</button>
+             <a href="add.html" class="btn primary">Nuevo Producto</a>
+        </div>
+        <button class="btn-volver" onclick="window.location.href='../index.html'">Inicio</button>
+
     </header>
 
-    <div class="btn">
-        <button class="btn-mostrar" onclick="mostrar()">Mostrar Productos </button>
-    </div>
+    <main class="layout">
 
-    <div class="contenedor" id="contenedor"></div>
+        <aside class="sidebar">
 
-    <script src="main.js"></script>
+            <h3>Filtros</h3>
 
+            <select id="categorySelect">
+                <option value="">Todas las categorías</option>
+            </select>
 
-<footer class="simple-footer">
-    <p><strong>Heriberto Hernández Bautista</strong></p>
-    <p>📞 Teléfono: 7712363618</p>
-    <p>📧 Correo: heribertobta.z@gmail.com</p>
-</footer>
+            <h4>Ordenar</h4>
+
+        <select id="sortSelect">
+            <option value="">Sin orden</option>
+            <option value="title-asc">Título-asc</option>
+            <option value="title-desc">Título-des</option>
+            <option value="price-asc">Precio-Mayor</option>
+            <option value="price-desc">Precio-Menor</option>
+        </select>
+
+        </aside>
+
+        <section class="content">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Foto</th>
+                        <th>Título</th>
+                        <th>Precio</th>
+                        <th>Categoría</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+
+                <tbody id="productTable"></tbody>
+
+            </table>
+
+            <footer class="pagination-bar">
+
+                <span id="pageInfo"></span>
+
+                <div>
+                    <button id="prevBtn" class="btn">Anterior</button>
+                    <button id="nextBtn" class="btn">Siguiente</button>
+                </div>
+
+            </footer>
+
+        </section>
+
+    </main>
+
+    <script src="dashboard.js" defer></script> 
 </body>
 </html>
